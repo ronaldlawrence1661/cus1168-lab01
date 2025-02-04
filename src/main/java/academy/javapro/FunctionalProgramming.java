@@ -11,27 +11,29 @@ public class FunctionalProgramming {
         // First, let's print our original list
         System.out.println("Original numbers: " + numbers);
 
-        // TASK 1: Filter even numbers and print them
-        List<Integer> evenNumbers = numbers.stream()
-            .filter(n -> n % 2 == 0)     // This keeps only even numbers
-            .collect(Collectors.toList());  // This collects results into a new list
+         // TASK 1: Filter even numbers and print them
+         List<Integer> evenNumbers = numbers.stream()
+                 .filter(n -> n % 2 == 0)    
+                    .collect(Collectors.toList());  
+ 
+         System.out.println("Even numbers: " + evenNumbers);
 
-        System.out.println("Even numbers: " + evenNumbers);
+         // TASK 2: Now it's your turn!
+         // TODO: Create a stream that doubles each number in the original list
+         // Hint: Use .map(n -> ...)
+         List<Integer> doubledNumbers = numbers.stream()
+                 .map(n -> n * 2)  
+                     .collect(Collectors.toList());  
 
-        // TASK 2: Now it's your turn!
-        // TODO: Create a stream that doubles each number in the original list
-        // Hint: Use .map(n -> ...)
-        List<Integer> doubledNumbers = numbers.stream()
-            // Write your code here
-            .collect(Collectors.toList());
-
-        // TASK 3: Sum all numbers in doubledNumbers
-        // TODO: Create a stream that sums all numbers
-        // Hint: Use .mapToInt(n -> n).sum()
-        int sum = 0; // Replace with your stream code
-
-        // Print results
-        System.out.println("Doubled numbers: " + doubledNumbers);
-        System.out.println("Sum of doubled numbers: " + sum);
-    }
-}
+         // TASK 3: Sum all numbers in doubledNumbers
+         // TODO: Create a stream that sums all numbers
+         // Hint: Use .mapToInt(n -> n).sum()
+         int sum = doubledNumbers.stream()
+                 .mapToInt(n -> n)  
+                    .sum(); 
+         // Print results
+         System.out.println("Doubled numbers: " + doubledNumbers);
+         System.out.println("Sum of doubled numbers: " + sum);
+     }
+ }
+ 
